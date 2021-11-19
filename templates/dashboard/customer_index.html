@@ -25,10 +25,10 @@
                         <thead class="bg-warning text-white">
                             <tr>
                                 <th scope="col">Product</th>
+                                <th scope="col">Product Code</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Order by</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,10 +36,10 @@
                             {% if order.customer == user %}
                             <tr>
                                 <td>{{ order.name }}</td>
+                                <td>{{ order.product_code }}</td>
                                 <td>{{ order.name.category }}</td>
                                 <td>{{ order.order_quantity }}</td>
-                                <td>{{ order.order_date }}</td>
-                                <td>{{ order.customer.username }}</td>
+                                <td>{{ order.date }}</td>
                             </tr>
                             {% endif %}
                             {% endfor %}

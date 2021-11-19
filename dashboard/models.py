@@ -1,32 +1,41 @@
 from django.db import models
 from datetime import datetime, date
+from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
+
 
 # Create your models here.
 CATEGORY = (
-    ('Stationary', 'Stationary'),
-    ('Electronics', 'Electronics'),
-    ('Food', 'Food'),
+    ('Fisheries', 'Fisheries'),
+    ('Cultivation', 'Cultivation'),
+    ('Fishing', 'Fishing'),
 )
 
 
 class Product(models.Model):
     name = models.CharField(max_length=100, null=True)
+    product_code = models.CharField(max_length=100, null=True)
     quantity = models.PositiveIntegerField(null=True)
     category = models.CharField(max_length=50, choices=CATEGORY, null=True)
 
+    class Meta:
+        verbose_name_plural = 'Product'
+
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name}-{self.quantity}-{self.product_code}'
 
 
 class Order(models.Model):
-    name = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+    name = models.ForeignKey(Product,  on_delete=models.CASCADE, null=True)
+    product_code = models.CharField(max_length=100, null=True)
     customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     order_quantity = models.PositiveIntegerField(null=True)
-    order_date = models.DateField("Order Date (mm/dd/yyyy)*",
-                                  auto_now_add=False, auto_now=False, blank=True)
-    timestamp = models.DateField(auto_now_add=True, auto_now=False, blank=True)
+    timezone.localtime(timezone.now())
+    date = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        verbose_name_plural = 'Order'
 
-def __str__(self):
-    return f'{self.customer}-{self.name}'
+    def _str_(self):
+        return f'{self.customer} ordered by {self.name}'

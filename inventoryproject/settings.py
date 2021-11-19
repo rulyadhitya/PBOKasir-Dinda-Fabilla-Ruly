@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'inventoryproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inventories',
+        'NAME': 'admin_inventory',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 

@@ -12,4 +12,4 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = ['name', 'order_quantity', 'order_date']
+        fields = ['name', 'product_code', 'order_quantity', 'date']

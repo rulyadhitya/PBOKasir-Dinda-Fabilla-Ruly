@@ -28,6 +28,7 @@
             <thead class="bg-warning text-white">
                 <tr>
                     <th scope="col">Name</th>
+                    <th scope="col">Product Code</th>
                     <th scope="col">Category</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Activity</th>
@@ -37,6 +38,7 @@
                 {% for product in product %}
                 <tr>
                     <td>{{ product.name }}</td>
+                    <td>{{ product.product_code}}</td>
                     <td>{{ product.category }}</td>
                     <td>{{ product.quantity }}</td>
                     <td>

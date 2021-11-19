@@ -14,4 +14,5 @@ urlpatterns = [
     path('customers/detial/<int:pk>/', views.customer_detail,
          name='dashboard-customer-detail'),
     path('order/', views.order, name='dashboard-order'),
+
 ]
