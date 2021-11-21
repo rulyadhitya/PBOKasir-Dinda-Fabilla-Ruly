@@ -7,3 +7,7 @@ Nama Kelompok :
 
 
 Kelas : Sistem Informasi Kelautan - B
+
+
+Link Gdrive Video + Manual Book
+https://drive.google.com/drive/folders/1yQ3GXY-DWcd52mMdRn7defB5WoQUcRij?usp=sharing
